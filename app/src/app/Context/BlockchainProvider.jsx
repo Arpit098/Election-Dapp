@@ -58,6 +58,13 @@ export const BlockchainProvider = ({ children }) => {
         if (ETHProvider) {
           // Create browser provider
           const provider = new ethers.BrowserProvider(ETHProvider);
+          const network = await provider.getNetwork();
+      
+          // Check if on correct network
+          if (network.chainId !== BigInt(11155111)) {
+            alert("Please connect to the Sepolia test network first");
+            return;
+          }
           await sendRequest(provider);
         } else {
           alert("Please install MetaMask wallet to use this site");
@@ -68,6 +75,8 @@ export const BlockchainProvider = ({ children }) => {
     }
   };
 
+  // Check and Switch Network
+  
   // Reconnect Wallet (used when accounts change)
   // Send Request and Get Instance
   const sendRequest = async (provider) => {

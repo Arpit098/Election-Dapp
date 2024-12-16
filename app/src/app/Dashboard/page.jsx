@@ -14,9 +14,9 @@ function VotingDashboard() {
 
   // Fetch candidates from the contract
   useEffect(() => {
+
     fetchCandidates();
   }, [contractInstance, isConnected]);
-
   const fetchCandidates = async () => {
     if (!contractInstance) {
       setIsLoading(false);
@@ -49,7 +49,6 @@ function VotingDashboard() {
       setIsLoading(false);
     }
   };
-
   // Handle voting
   const handleVote = async (candidateId) => {
     if (!contractInstance || !isConnected) {
@@ -85,6 +84,7 @@ function VotingDashboard() {
       }
     }
   };
+  
 
   // Render loading state
   if (isLoading) {
@@ -95,6 +95,7 @@ function VotingDashboard() {
         <p>Loading candidates...</p>
       </div>
       </>
+      
     );
   }
 
@@ -111,7 +112,7 @@ function VotingDashboard() {
     <div className="min-h-screen bg-gray-900 text-white">
       <Nav/>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-8 mt-8 sm:mt-16">
-        <div className="flex items-center justify-center mb-6">
+      <div className="flex items-center justify-center mb-6">
           <h1 className="text-2xl sm:text-3xl font-bold mr-4">Participants</h1>
           <RxReload
             className="text-2xl sm:text-3xl text-gray-400 hover:text-gray-200 transition-transform transform hover:scale-110 cursor-pointer"
@@ -134,16 +135,8 @@ function VotingDashboard() {
                   </th>
                 </tr>
               </thead>
-              {isLoading ? (
-                <div className="flex items-center justify-center mt-8">
-                  <p>Loading results...</p>
-                </div>
-              ) : error ? (
-                <div className="flex items-center justify-center mt-8">
-                  <p className="text-red-500">{error}</p>
-                </div>
-              ) : (
-                <tbody>
+              
+              <tbody>
                 {candidates.map((candidate, index) => (
                   <tr
                     key={candidate.candidateId}
@@ -169,7 +162,6 @@ function VotingDashboard() {
                   </tr>
                 ))}
               </tbody>
-              )}
             </table>
           </div>
         </div>
