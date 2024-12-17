@@ -12,15 +12,15 @@ module.exports = {
       runs: 200,
     },
   },
-  networks: { 
-    sepolia: {
-      url: "https://ethereum-sepolia-rpc.publicnode.com",
-      accounts: [process.env.PRIVATE_KEY], 
-    }
-  },
-  etherscan: {
-    apiKey: {
-      sepolia: 'EK4UAXPPGPSE2FVYUIYQT3IYCWX1K1DESE'
-    }
-  }
+  // networks: { 
+  //   sepolia: {
+  //     url: "https://ethereum-sepolia-rpc.publicnode.com",
+  //     accounts: [process.env.PRIVATE_KEY], 
+  //   }
+  // },
+  // etherscan: {
+  //   apiKey: {
+  //     sepolia: ''
+  //   }
+  // }
 };
