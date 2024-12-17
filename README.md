@@ -33,8 +33,8 @@ Components:
   3) UserModal.jsx: it contains code to register as user.
   4) CandidateModal.jsx: it contains code register as candidate.
     
- Dashboard/page.jsx: this page shows the list of candidates with their current vote count and a button to vote them. *Note: voting can only be dont by registered users*
- Result/page.jsx: this page contains the code to conclude the ongoing election.
+-> Dashboard/page.jsx: this page shows the list of candidates with their current vote count and a button to vote them. *Note: voting can only be dont by registered users*
+-> Result/page.jsx: this page contains the code to conclude the ongoing election.
 
 Context:
  BrowserProvider.jsx: This file uses the createContext and useContext hooks to provide functions for connecting the wallet and resources for interacting with smart contract functions, which are then shared with other 
