@@ -34,6 +34,7 @@ Components:
   4) CandidateModal.jsx: it contains code register as candidate.
     
 -> Dashboard/page.jsx: this page shows the list of candidates with their current vote count and a button to vote them. *Note: voting can only be dont by registered users*
+
 -> Result/page.jsx: this page contains the code to conclude the ongoing election.
 
 Context:
